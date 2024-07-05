@@ -309,7 +309,7 @@ function Home() {
                 <h1 className='text-3xl font-bold mb-10'><span className='text-primary'>{"< "}{text2}{" />"}</span></h1>
                 <div className='md:flex justify-center gap-10 mt-20 pb-40 space-y-8 md:space-y-0'>
 
-                    <div className='flex justify-center'>
+                    {/* <div className='flex justify-center'>
                         <Card className="col-span-12 sm:col-span-4 h-[300px]">
 
                             <Image
@@ -326,7 +326,7 @@ function Home() {
                                 </Button>
                             </CardFooter>
                         </Card>
-                    </div>
+                    </div> */}
                     <div className='flex justify-center'>
                         <Card className="col-span-12 sm:col-span-4 h-[300px]">
 
