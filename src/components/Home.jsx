@@ -111,7 +111,7 @@ function Home() {
 
     return (
         <div>
-            <div id="Home" className='md:flex justify-evenly space-y-8'>
+            <section id="Home" className='md:flex justify-evenly space-y-8'>
                 <div className='px-8 my-auto md:block hidden text-center'>
                     <h1 className="text-5xl font-bold text-center mb-6">
                         I am <span className='text-primary'>{text}</span>
@@ -228,8 +228,8 @@ function Home() {
                     </div>
 
                 </div>
-            </div>
-            <div id="About" className='mt-8 text-center'>
+            </section>
+            <section id="About" className='mt-8 text-center'>
                 <div className='md:flex justify-between p-14 space-y-10'>
                     <div className='flex justify-center md:w-1/3' style={{ backgroundImage: `url(${frame})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }}>
 
@@ -278,8 +278,8 @@ function Home() {
                     </div>
 
                 </div>
-            </div>
-            <div id="Achievements" className='text-center mt-20 mb-24 px-10'>
+            </section>
+            <section id="Achievements" className='text-center mt-20 mb-24 px-10'>
                 <h1 className='text-3xl font-bold mb-12'><span className='text-primary'>{"< "}<FontAwesomeIcon icon={faTrophy} size="md" />{" "}{text3}{" />"}</span></h1>
                 <div className='md:flex gap-6 justify-center space-y-8 md:space-y-0'>
                     <div className='flex justify-center'>
@@ -304,8 +304,8 @@ function Home() {
                         </Card>
                     </div>
                 </div>
-            </div>
-            <div id="Projects" className='text-center mt-10 px-14'>
+            </section>
+            <section id="Projects" className='text-center mt-10 px-14'>
                 <h1 className='text-3xl font-bold mb-10'><span className='text-primary'>{"< "}{text2}{" />"}</span></h1>
                 <div className='md:flex justify-center gap-10 mt-20 pb-40 space-y-8 md:space-y-0'>
 
@@ -365,7 +365,7 @@ function Home() {
                     </div>
 
                 </div>
-            </div>
+            </section>
             <Footer />
         </div>
 

@@ -15,13 +15,41 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
     const menuItems = [
         "Home",
         "About",
+        "Achievements",
         "Projects",
     ];
+
+    const smoothScrollTo = (targetPosition) => {
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 800;
+        let start = null;
+
+        window.requestAnimationFrame(function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const progressRatio = Math.min(progress / duration, 1);
+            const ease = progressRatio * (2 - progressRatio);
+            window.scrollTo(0, startPosition + distance * ease);
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            }
+        });
+    };
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
         localStorage.setItem("activeLink", link);
-        setIsMenuOpen(false); // Close menu after clicking a link
+        setIsMenuOpen(false);
+
+        const section = document.getElementById(link);
+        console.log('Section:', section, 'Link:', link); // Debugging statement
+        if (section) {
+            const targetPosition = section.offsetTop;
+            smoothScrollTo(targetPosition);
+        } else {
+            console.error(`No section found with ID: ${link}`);
+        }
     };
 
     return (
