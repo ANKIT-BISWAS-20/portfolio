@@ -43,7 +43,6 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
         setIsMenuOpen(false);
 
         const section = document.getElementById(link);
-        console.log('Section:', section, 'Link:', link); // Debugging statement
         if (section) {
             const targetPosition = section.offsetTop;
             smoothScrollTo(targetPosition);
