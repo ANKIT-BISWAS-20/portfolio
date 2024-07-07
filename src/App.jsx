@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from "@nextui-org/button";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Footer from './components/Footer';
 
 function App() {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
@@ -12,6 +13,7 @@ function App() {
       <div className='h-full'>
         <Home />
       </div>
+      <Footer />
     </div>
   )
 }
