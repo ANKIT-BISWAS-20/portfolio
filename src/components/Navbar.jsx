@@ -5,6 +5,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { Switch } from "@nextui-org/react";
 import { MoonIcon } from "./MoonIcon";
 import { SunIcon } from "./SunIcon";
+import logo from "../assets/logoMy.png";
 
 export default function NavbarMy({ darkMode, setDarkMode }) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -67,7 +68,8 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
 
             <NavbarContent className="sm:hidden pr-3" justify="start">
                 <NavbarBrand>
-                    <h1 className="text-xl font-bold">Ankit Biswas</h1>
+                    {/* <h1 className="text-xl font-bold">Ankit Biswas</h1> */}
+                    <img src={logo} alt="logo" className="h-8 w-18" />
                 </NavbarBrand>
                 <NavbarItem>
                     {/* <Button as={Link} color="foreground" href="#" variant="flat">
@@ -93,7 +95,8 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
 
             <NavbarContent className="hidden sm:flex gap-6">
                 <NavbarBrand className="mr-auto">
-                    <h1 className="text-xl font-mono">Ankit Biswas</h1>
+                    {/* <h1 className="text-xl font-mono">Ankit Biswas</h1> */}
+                    <img src={logo} alt="logo" className="h-8 w-18" />
                 </NavbarBrand>
             </NavbarContent>
 
@@ -127,15 +130,16 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarMenu>
+            <NavbarMenu className="items-center flex justify-center gap-10">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
-                            className={`w-full ${activeLink === item ? "active" : ""}`}
+                            className={`w-full ${activeLink === item ? "text-primary font-bold text-2xl" : "text-2xl"}`}
+                            // className="w-full active active:text-violet-500"
                             color={"foreground"}
                             href="#"
                             size="lg"
-                            onClick={() => handleLinkClick(item)}
+                            onClick={() =>{handleLinkClick(item)}}
                         >
                             {item}
                         </Link>

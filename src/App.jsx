@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 
 function App() {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
-  console.log(darkMode)
   return (
     <div className={`${darkMode ? 'dark' : ''} text-foreground bg-background`}>
       <Navbar setDarkMode={setDarkMode} darkMode={darkMode} />
