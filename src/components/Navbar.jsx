@@ -2,6 +2,9 @@ import React from "react";
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { Switch } from "@nextui-org/react";
+import { MoonIcon } from "./MoonIcon";
+import { SunIcon } from "./SunIcon";
 
 export default function NavbarMy({ darkMode, setDarkMode }) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -67,9 +70,24 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
                     <h1 className="text-xl font-bold">Ankit Biswas</h1>
                 </NavbarBrand>
                 <NavbarItem>
-                    <Button as={Link} color="foreground" href="#" variant="flat">
+                    {/* <Button as={Link} color="foreground" href="#" variant="flat">
                         <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size="xl" onClick={changeMode} />
-                    </Button>
+                    </Button> */}
+                    <Switch
+                        defaultSelected
+                        size="lg"
+                        color="secondary"
+                        onChange={changeMode}
+                        isSelected={darkMode===false}
+                        thumbIcon={({isSelected,className }) =>
+                            isSelected ? (
+                                <SunIcon className={className} />
+                            ) : (
+                                <MoonIcon className={className} />
+                            )
+                        }
+                    >
+                    </Switch>
                 </NavbarItem>
             </NavbarContent>
 
@@ -88,9 +106,24 @@ export default function NavbarMy({ darkMode, setDarkMode }) {
                     </NavbarItem>
                 ))}
                 <NavbarItem>
-                    <Button as={Link} color="foreground" href="#" variant="flat" onClick={changeMode}>
+                    {/* <Button as={Link} color="foreground" href="#" variant="flat" onClick={changeMode}>
                         <FontAwesomeIcon icon={darkMode ? faSun : faMoon} size="xl" />
-                    </Button>
+                    </Button> */}
+                    <Switch
+                        defaultSelected
+                        size="lg"
+                        color="secondary"
+                        onChange={changeMode}
+                        isSelected={darkMode===false}
+                        thumbIcon={({isSelected,className }) =>
+                            isSelected ? (
+                                <SunIcon className={className} />
+                            ) : (
+                                <MoonIcon className={className} />
+                            )
+                        }
+                    >
+                    </Switch>
                 </NavbarItem>
             </NavbarContent>
 
